@@ -8,29 +8,38 @@ body {
 
 div#App {
     max-width: 100%;
+    padding: 0.5em;
     border: 0.1em solid gray;
 
     display: grid;
     grid-gap: 1rem;
     grid-template-areas:
         "title title"
-        "canvas empty"
-        "canvas empty"
-        "canvas empty"
-        "canvas empty"
-        "canvas win_loose"
-        "canvas user_word"
+        "canvas blank1"
         "canvas new_game"
+        "canvas blank2"
+        "canvas blank2"
+        "canvas win_loose"
+        "canvas blank3"
+        "canvas masked_word"
         "keyboard keyboard";
+
+    & .maskedWord {
+        grid-area: masked_word;
+        background-color: lightgreen;
+        border: 0.1em solid black;
+        border-radius: 0.2em;
+        font-size: 1.4em;
+        letter-spacing: 0.3em;
+        padding: 0.2em 1.5em;
+    }
 
     & .virtualKeyboard {
         grid-area: keyboard;
-
         max-width: 24em;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-
         & button {
             font-size: 1.4em;
             margin: 0.1em;

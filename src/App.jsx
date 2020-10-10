@@ -4,6 +4,10 @@ import "./App.scss"
 import VirtualKeyboard from "./VirtualKeyboard"
 
 export default class App extends React.Component {
+    state = {
+        maskedWord: "······",
+    }
+
     onKeyClicked(letter) {
         return null
     }
@@ -13,6 +17,7 @@ export default class App extends React.Component {
             <React.Fragment>
                 <h1>Le jeu du pendu</h1>
                 <div id="App">
+                    <p className="maskedWord">{this.state.maskedWord}</p>
                     <VirtualKeyboard onClick={this.onKeyClicked.bind(this)} />
                 </div>
             </React.Fragment>

@@ -1,5 +1,5 @@
 import React from "react"
-import { render } from "@testing-library/react"
+import { cleanup, render } from "@testing-library/react"
 
 import App from "../App"
 
@@ -7,6 +7,10 @@ let app
 
 beforeEach(() => {
     app = render(<App />)
+})
+
+afterEach(() => {
+    cleanup()
 })
 
 it("should create h1", () => {
@@ -17,6 +21,9 @@ it("should create h1", () => {
 })
 
 it("should create virtual keyboard", () => {
-    const { container } = app
-    expect(container.querySelector(".virtualKeyboard")).toBeTruthy()
+    expect(app.container.querySelector(".virtualKeyboard")).toBeTruthy()
+})
+
+it("should create masked word", () => {
+    expect(app.getByText(/^·+$/)).toBeTruthy()
 })
