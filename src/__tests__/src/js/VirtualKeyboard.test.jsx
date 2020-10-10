@@ -1,7 +1,7 @@
 import { render, cleanup, fireEvent } from "@testing-library/react"
 import React from "react"
 
-import VirtualKeyboard from "../../VirtualKeyboard"
+import VirtualKeyboard from "../../../js/VirtualKeyboard"
 
 let keyboard
 const mock = jest.fn()
