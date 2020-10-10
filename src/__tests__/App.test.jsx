@@ -27,3 +27,7 @@ it("should create virtual keyboard", () => {
 it("should create masked word", () => {
     expect(app.getByText(/^·+$/)).toBeTruthy()
 })
+
+it("should create button with class newWord", () => {
+    expect(app.container.querySelector("button.newWord")).toBeTruthy()
+})
