@@ -1,0 +1,49 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#App {
+    max-width: 100%;
+    border: 0.1em solid gray;
+
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+        "title title"
+        "canvas empty"
+        "canvas empty"
+        "canvas empty"
+        "canvas empty"
+        "canvas win_loose"
+        "canvas user_word"
+        "canvas new_game"
+        "keyboard keyboard";
+
+    & .virtualKeyboard {
+        grid-area: keyboard;
+
+        max-width: 24em;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        & button {
+            font-size: 1.4em;
+            margin: 0.1em;
+            padding: 0.2em 0.5em;
+            background-color: lightgray;
+            border: 0;
+            border-radius: 3px;
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    div#App {
+        margin: 0 1em;
+    }
+}
